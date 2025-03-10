@@ -15,6 +15,10 @@ describe('Validate Login Functionality', () =>
     it('Login with invalid credentials', () => 
     {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
+        cy.get('#txtUsername').type('Admin')
+        cy.get('#txtPassword').type('admin1234')
+        cy.get('#btnLogin').click()
+        cy.get('#spanMessage').should('be.visible') 
         
     });
 

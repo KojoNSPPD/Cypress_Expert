@@ -30,9 +30,10 @@ describe("Validate checkbox and radio buttons", () => {
     it('check example',() => {
         cy.visit('https://www.ironspider.ca/forms/checkradio.htm')
         cy.get(`input[type='checkbox']`).check(['red','blue','purple'])
+        cy.get(`input[type='checkbox']`).should('have.length',6)
     })
 
-    it.only('Validate Radio Buttons',() => {
+    it('Validate Radio Buttons',() => {
         cy.visit('https://www.ironspider.ca/forms/checkradio.htm')
         cy.get(`input[type='radio']`).first().check()
         //cy.get(`input[type='radio']`).check("Opera")

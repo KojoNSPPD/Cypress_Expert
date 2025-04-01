@@ -2,7 +2,7 @@
 
 describe('BDD Style assertions ', () => {
 
-    it('Validate Login Page', () => {
+    it.only('Validate Login Page', () => {
         cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login')
         cy.url().should('include','/auth/login')
         cy.title().should('eq','OrangeHRM')
@@ -14,6 +14,7 @@ describe('BDD Style assertions ', () => {
         cy.get(`input[placeholder='Username']`).should('be.enabled').and('not.be.disabled')
         cy.get(`input[placeholder='Username']`).type('admin')
         cy.get(`input[placeholder='Username']`).invoke('val').should('eq','admin')
+        cy.get(`button[type='submit']`).should('have.css','background-color','rgb(255, 123, 29)')
     })
 
     let PhoneNumber;

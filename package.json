@@ -12,7 +12,7 @@
   "description": "",
   "devDependencies": {
     "@cypress/xpath": "^2.0.3",
-    "cypress": "^14.3.2"
+    "cypress": "^14.3.3"
   },
   "dependencies": {
     "chai": "^5.2.0"
